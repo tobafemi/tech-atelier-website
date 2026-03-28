@@ -1,0 +1,72 @@
+import { Globe, Sparkles, ClipboardList } from 'lucide-react';
+import type { Service, Project, Testimonial } from './types';
+
+export const SERVICES: Service[] = [
+  {
+    id: 'website-build',
+    title: 'Website Build & Refresh',
+    price: 'from £399',
+    description: 'Your digital front door, built in 5 days.',
+    icon: <Globe className="w-6 h-6" />,
+  },
+  {
+    id: 'growth-marketing',
+    title: 'Growth Marketing',
+    price: 'Personalised growth plans - £250',
+    description:
+      'We grow your visibility online and turn it into real enquiries — through SEO, social content and targeted campaigns built around your business goals.',
+    icon: <Sparkles className="w-6 h-6" />,
+  },
+  {
+    id: 'tech-audit',
+    title: 'Business Technology Audit',
+    price: 'Audit and consultation fee - £250',
+    description:
+      'We assess your processes, identify opportunities and build tools, automations and AI agents to drive productivity, reduce costs and grow revenue.',
+    guarantee:
+      'If our audit fails to find at least £500 in annual savings, we refund your consultation fee.',
+    icon: <ClipboardList className="w-6 h-6" />,
+  },
+];
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'chopam-foods',
+    title: 'Chopam Foods',
+    category: 'Brand & Web',
+    imageUrl: 'https://picsum.photos/seed/chopamfoods/1200/800',
+    description:
+      'Nigerian food box delivery service — full brand identity and digital presence.',
+  },
+  {
+    id: 'copysnap',
+    title: 'CopySnap',
+    category: 'Product Build',
+    imageUrl: 'https://picsum.photos/seed/copysnap/1200/800',
+    description: 'AI-powered property description generator for estate agents.',
+  },
+  {
+    id: 'carehire',
+    title: 'Carehire',
+    category: 'Product Build',
+    imageUrl: 'https://picsum.photos/seed/carehire/1200/800',
+    description: 'Digital tools and workflows for care recruitment and staffing.',
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: '1',
+    author: 'Sarah Jenkins',
+    role: 'CTO',
+    company: 'Velocity Global',
+    content: "Tech Atelier didn't just write code; they understood our business model and built a system that actually solved our bottleneck. A true partner.",
+  },
+  {
+    id: '2',
+    author: 'Marcus Thorne',
+    role: 'Founder',
+    company: 'NextGen AI',
+    content: "Building an MVP is usually stressful, but the Atelier team made it feel like a craft. Every detail was intentional and polished.",
+  },
+];
