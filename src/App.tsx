@@ -33,17 +33,17 @@ const App: React.FC = () => {
         
         {/* Industry ticker */}
         <div className="bg-white border-y border-slate-100 py-16 overflow-hidden">
-           <div className="flex whitespace-nowrap animate-[marquee_30s_linear_infinite] hover:[animation-play-state:paused] gap-20 items-center px-10">
+           <div className="flex whitespace-nowrap animate-[marquee_15s_linear_infinite] hover:[animation-play-state:paused] gap-20 items-center px-10">
               {['CARE AGENCIES', 'BARBERSHOPS', 'RESTAURANTS', 'STARTUPS', 'CHURCHES', 'ESTATE AGENTS', 'TRADES', 'RETAIL'].map((tag) => (
                 <React.Fragment key={tag}>
-                  <span className="text-slate-200 text-4xl font-bold tracking-[0.4em] select-none">{tag}</span>
+                  <span className="text-slate-200 text-xl font-bold tracking-[0.4em] select-none">{tag}</span>
                   <div className="w-2 h-2 rounded-full bg-emerald-500 opacity-20" />
                 </React.Fragment>
               ))}
               {/* Duplicate for seamless marquee */}
               {['CARE AGENCIES', 'BARBERSHOPS', 'RESTAURANTS', 'STARTUPS', 'CHURCHES', 'ESTATE AGENTS', 'TRADES', 'RETAIL'].map((tag) => (
                 <React.Fragment key={tag + '-2'}>
-                  <span className="text-slate-200 text-4xl font-bold tracking-[0.4em] select-none">{tag}</span>
+                  <span className="text-slate-200 text-xl font-bold tracking-[0.4em] select-none">{tag}</span>
                   <div className="w-2 h-2 rounded-full bg-emerald-500 opacity-20" />
                 </React.Fragment>
               ))}

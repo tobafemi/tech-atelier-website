@@ -7,11 +7,12 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
           <div className="max-w-sm">
-            <a href="#" className="text-2xl font-bold tracking-tight text-gray-900 flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-black flex items-center justify-center rounded-sm">
-                <span className="text-white text-xs font-heading italic">ta</span>
-              </div>
-              Tech Atelier
+            <a href="#" className="inline-block mb-6">
+              <img
+                src="/tech-atelier-logo.svg"
+                alt="Tech Atelier"
+                className="h-8 w-auto max-w-[220px] object-contain"
+              />
             </a>
             <p className="text-gray-500 font-light leading-relaxed">
               Technology solutions built to solve your business problems. Web and AI consultancy for small businesses —{' '}

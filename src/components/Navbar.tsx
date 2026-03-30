@@ -26,12 +26,13 @@ const Navbar: React.FC = () => {
           href="#" 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-3 group"
+          className="flex items-center shrink-0 group"
         >
-          <div className="w-10 h-10 bg-slate-950 flex items-center justify-center rounded-lg group-hover:rotate-12 transition-transform duration-300">
-            <span className="text-white text-sm font-heading italic">ta</span>
-          </div>
-          <span className="hidden sm:inline-block">Tech Atelier</span>
+          <img
+            src="/tech-atelier-logo.svg"
+            alt="Tech Atelier"
+            className="h-7 w-auto sm:h-9 max-w-[min(100%,240px)] object-left object-contain group-hover:opacity-90 transition-opacity"
+          />
         </motion.a>
 
         <div className="hidden md:flex items-center gap-10">

@@ -21,7 +21,8 @@ const CTA: React.FC = () => {
           >
             <span className="text-emerald-400 text-[11px] font-bold tracking-[0.5em] uppercase mb-10 block">Contact</span>
             <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16 leading-[0.9] text-balance">
-              Ready to build something that <span className="text-emerald-500 italic">actually</span> works?
+              Are you ready to
+              <span className="text-emerald-500"> grow your business</span>?
             </h2>
             
             <div className="flex flex-col sm:flex-row gap-8">

@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     id: 'chopam-foods',
     title: 'Chopam Foods',
     category: 'Brand & Web',
-    imageUrl: 'https://picsum.photos/seed/chopamfoods/1200/800',
+    imageUrl: 'https://picsum.photos/seed/food/1200/800',
     description:
       'Nigerian food box delivery service — full brand identity and digital presence.',
   },
@@ -42,15 +42,15 @@ export const PROJECTS: Project[] = [
     id: 'copysnap',
     title: 'CopySnap',
     category: 'Product Build',
-    imageUrl: 'https://picsum.photos/seed/copysnap/1200/800',
+    imageUrl: 'https://picsum.photos/seed/property/1200/800',
     description: 'AI-powered property description generator for estate agents.',
   },
   {
-    id: 'carehire',
-    title: 'Carehire',
+    id: 'cft-churches',
+    title: 'CFT Churches',
     category: 'Product Build',
-    imageUrl: 'https://picsum.photos/seed/carehire/1200/800',
-    description: 'Digital tools and workflows for care recruitment and staffing.',
+    imageUrl: 'https://picsum.photos/seed/church/1200/800',
+    description: 'Digital tools and workflows for church communities and outreach.',
   },
 ];
 

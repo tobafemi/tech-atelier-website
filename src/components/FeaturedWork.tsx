@@ -40,7 +40,6 @@ const FeaturedWork: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
                    <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3">{project.category}</span>
-                   <h4 className="text-white text-3xl font-bold mb-4">{project.title}</h4>
                    <p className="text-slate-200 font-light leading-relaxed mb-6">{project.description}</p>
                    <button className="px-6 py-3 bg-white text-slate-950 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-emerald-500 hover:text-white transition-colors">
                      Case Study

@@ -36,7 +36,7 @@ const AdvisoryTool: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-950 mb-6"
           >
-            Quick AI & tech angle
+            Ask the Atelier
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
@@ -44,7 +44,7 @@ const AdvisoryTool: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-slate-500 max-w-xl mx-auto font-light text-lg"
           >
-            Describe a business bottleneck. Get a fast read on how web, automation or AI could help — like a quick sense-check before Growth Marketing or a deeper engagement.
+            Describe your biggest business challenge. Get an instant perspective on how technology could help.
           </motion.p>
         </div>
 

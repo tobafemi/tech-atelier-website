@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Georgia');
+    </style>
+  </defs>
+
+  <!-- Left bracket in slate -->
+  <rect x="0" y="12" width="4" height="44" rx="1.5" fill="#0f172a"/>
+  <rect x="0" y="12" width="16" height="4" rx="1.5" fill="#0f172a"/>
+  <rect x="0" y="52" width="16" height="4" rx="1.5" fill="#0f172a"/>
+
+  <!-- ta italic text -->
+  <text x="22" y="46" font-family="Georgia, serif" font-size="28" font-style="italic" fill="#0f172a" font-weight="400">ta</text>
+
+  <!-- Right bracket in emerald -->
+  <rect x="64" y="12" width="4" height="44" rx="1.5" fill="#10b981"/>
+  <rect x="52" y="12" width="16" height="4" rx="1.5" fill="#10b981"/>
+  <rect x="52" y="52" width="16" height="4" rx="1.5" fill="#10b981"/>
+
+  <!-- Wordmark -->
+  <text x="84" y="38" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a" letter-spacing="-0.8">Tech Atelier</text>
+
+  <!-- Tagline -->
+  <text x="85" y="56" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="600" fill="#10b981" letter-spacing="2.5">TECH WORKSHOP</text>
+</svg>

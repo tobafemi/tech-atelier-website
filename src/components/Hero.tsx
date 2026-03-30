@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            NOW TAKING ON NEW CLIENTS — SPRING 2026
+            NOW TAKING ON NEW CLIENTS — AVAILABLE NOW
           </motion.div>
           
           <motion.h1 variants={item} className="text-6xl md:text-8xl font-bold tracking-tighter text-slate-950 leading-[0.95] text-balance mb-8">
@@ -96,8 +96,25 @@ const Hero: React.FC = () => {
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                 className="w-full h-full bg-slate-950 flex items-center justify-center shadow-2xl overflow-hidden"
               >
-                <div className="w-full h-full bg-[radial-gradient(circle_at_30%_30%,#334155_0%,#0f172a_100%)] flex items-center justify-center">
-                  <span className="text-white text-4xl font-heading italic tracking-tighter opacity-80">atelier</span>
+                <div className="w-full h-full bg-[radial-gradient(circle_at_30%_30%,#334155_0%,#0f172a_100%)] flex items-center justify-center px-4">
+                  <div className="flex flex-col items-center justify-center gap-1 text-center">
+                    <motion.span
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 0.85, y: 0 }}
+                      transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] as const, delay: 0.25 }}
+                      className="text-white text-3xl font-heading italic tracking-tighter"
+                    >
+                      atelier
+                    </motion.span>
+                    <motion.span
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 0.95, y: 0 }}
+                      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] as const, delay: 0.45 }}
+                      className="text-emerald-400 text-[9px] font-mono font-semibold uppercase tracking-[0.2em] mt-1"
+                    >
+                      [ workshop ]
+                    </motion.span>
+                  </div>
                 </div>
               </motion.div>
               {/* Floating UI Elements */}

@@ -32,10 +32,10 @@ const WhyChooseUs: React.FC = () => {
             >
               <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4 block">The Atelier Way</span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
-                Built for small businesses like yours.
+                Built for businesses like yours.
               </h2>
               <p className="text-lg text-gray-500 leading-relaxed font-light mb-12">
-                We work especially with care agencies, barbershops, restaurants, law firms, accountants and owner-operated SMEs — bringing web and AI expertise without corporate overhead.
+                We are passionate about businesses like yours. We seek to bring our technical expertise and growth mindset to give you an advantage over your competitors.
               </p>
 
               <div className="space-y-8">
