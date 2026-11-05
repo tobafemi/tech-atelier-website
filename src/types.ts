@@ -1,28 +1,31 @@
-import type { ReactNode } from 'react';
-
-export interface Service {
+export interface Step {
   id: string;
+  number: string;
   title: string;
+  price: string;
+  summary: string;
+  includes: string[];
+}
+
+export interface Agent {
+  id: string;
+  name: string;
   description: string;
-  /** e.g. "from £399" — shown under the title when set */
-  price?: string;
-  /** Optional line below description (e.g. guarantee), styled in emerald in the services grid */
-  guarantee?: string;
-  icon: ReactNode;
+  goodFor: string;
+  measuredBy: string;
+}
+
+export interface StandardPoint {
+  title: string;
+  text: string;
 }
 
 export interface Project {
   id: string;
   title: string;
   category: string;
-  imageUrl: string;
-  description: string;
-}
-
-export interface Testimonial {
-  id: string;
-  author: string;
-  role: string;
-  content: string;
-  company: string;
+  /** Optional demo video. When set, the card plays it instead of showing the icon tile. */
+  videoUrl?: string;
+  /** Still image shown before the video plays. */
+  posterUrl?: string;
 }

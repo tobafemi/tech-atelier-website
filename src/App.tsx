@@ -1,71 +1,59 @@
-
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import SectorTicker from './components/SectorTicker';
 import Services from './components/Services';
-import WhyChooseUs from './components/WhyChooseUs';
+import Agents from './components/Agents';
+import AgentCheck from './components/AgentCheck';
+import Standard from './components/Standard';
+import About from './components/About';
 import FeaturedWork from './components/FeaturedWork';
-import AdvisoryTool from './components/AdvisoryTool';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import ContactModal from './components/ContactModal';
+import { ContactContext, type Topic } from './lib/contact';
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
+  const [contactOpen, setContactOpen] = useState(false);
+  const [topic, setTopic] = useState<Topic | undefined>();
+  const [openCount, setOpenCount] = useState(0);
+  const openContact = useCallback((t?: Topic) => {
+    setTopic(t);
+    setOpenCount((n) => n + 1);
+    setContactOpen(true);
+  }, []);
+  const closeContact = useCallback(() => setContactOpen(false), []);
 
   return (
-    <div className="min-h-screen relative selection:bg-emerald-500 selection:text-white">
-      {/* Progress Bar */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-emerald-500 z-[100] origin-left"
-        style={{ scaleX }}
-      />
-      
-      <Navbar />
-      
-      <main>
-        <Hero />
-        
-        {/* Industry ticker */}
-        <div className="bg-white border-y border-slate-100 py-16 overflow-hidden">
-           <div className="flex whitespace-nowrap animate-[marquee_15s_linear_infinite] hover:[animation-play-state:paused] gap-20 items-center px-10">
-              {['CARE AGENCIES', 'BARBERSHOPS', 'RESTAURANTS', 'STARTUPS', 'CHURCHES', 'ESTATE AGENTS', 'TRADES', 'RETAIL'].map((tag) => (
-                <React.Fragment key={tag}>
-                  <span className="text-slate-200 text-xl font-bold tracking-[0.4em] select-none">{tag}</span>
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 opacity-20" />
-                </React.Fragment>
-              ))}
-              {/* Duplicate for seamless marquee */}
-              {['CARE AGENCIES', 'BARBERSHOPS', 'RESTAURANTS', 'STARTUPS', 'CHURCHES', 'ESTATE AGENTS', 'TRADES', 'RETAIL'].map((tag) => (
-                <React.Fragment key={tag + '-2'}>
-                  <span className="text-slate-200 text-xl font-bold tracking-[0.4em] select-none">{tag}</span>
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 opacity-20" />
-                </React.Fragment>
-              ))}
-           </div>
-        </div>
+    <ContactContext.Provider value={openContact}>
+      <div className="min-h-screen relative selection:bg-emerald-500 selection:text-white">
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 bg-emerald-500 z-[100] origin-left"
+          style={{ scaleX }}
+        />
 
-        <Services />
-        <WhyChooseUs />
-        <FeaturedWork />
-        <AdvisoryTool />
-        <CTA />
-      </main>
-      
-      <Footer />
-      
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
-    </div>
+        <Navbar />
+
+        <main>
+          <Hero />
+          <SectorTicker />
+          <Services />
+          <Agents />
+          <AgentCheck />
+          <Standard />
+          <About />
+          <FeaturedWork />
+          <CTA />
+        </main>
+
+        <Footer />
+        <ContactModal key={openCount} isOpen={contactOpen} onClose={closeContact} initialTopic={topic} />
+      </div>
+    </ContactContext.Provider>
   );
 };
 
