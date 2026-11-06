@@ -1,16 +1,14 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import nodemailer from 'nodemailer';
 
 /**
  * Vercel serverless function: receives contact-form and free-check leads and emails them
- * to the Tech Atelier inbox through Namecheap Private Email.
+ * to the Tech Atelier inbox through Resend (https://resend.com).
  *
  * Environment variables (set in Vercel → Project → Settings → Environment Variables):
- *   SMTP_USER  mailbox that sends the notification, e.g. hello@tech-atelier.co.uk
- *   SMTP_PASS  that mailbox's password
- *   LEAD_TO    where leads go (optional, defaults to SMTP_USER)
- *   SMTP_HOST  optional, defaults to mail.privateemail.com
- *   SMTP_PORT  optional, defaults to 465
+ *   RESEND_API_KEY  a Resend API key with sending access
+ *   LEAD_TO         where leads go (optional, defaults to hello@tech-atelier.co.uk)
+ *   LEAD_FROM       sender (optional, defaults to "Tech Atelier website <website@tech-atelier.co.uk>").
+ *                   Its domain must be verified in Resend.
  */
 
 type Req = IncomingMessage & { body?: unknown; method?: string };
@@ -51,9 +49,9 @@ export default async function handler(req: Req, res: Res) {
 
   if (!name || !isEmail(email)) return res.status(400).json({ ok: false });
 
-  const { SMTP_USER, SMTP_PASS } = process.env;
-  if (!SMTP_USER || !SMTP_PASS) {
-    console.error('contact: SMTP_USER / SMTP_PASS not set');
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error('contact: RESEND_API_KEY not set');
     return res.status(500).json({ ok: false });
   }
 
@@ -77,20 +75,22 @@ export default async function handler(req: Req, res: Res) {
     .join('')}</table>`;
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'mail.privateemail.com',
-      port: Number(process.env.SMTP_PORT || 465),
-      secure: Number(process.env.SMTP_PORT || 465) === 465,
-      auth: { user: SMTP_USER, pass: SMTP_PASS },
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: process.env.LEAD_FROM || 'Tech Atelier website <website@tech-atelier.co.uk>',
+        to: [process.env.LEAD_TO || 'hello@tech-atelier.co.uk'],
+        reply_to: email,
+        subject,
+        text,
+        html,
+      }),
     });
-    await transporter.sendMail({
-      from: `"Tech Atelier website" <${SMTP_USER}>`,
-      to: process.env.LEAD_TO || SMTP_USER,
-      replyTo: `"${name.replace(/"/g, '')}" <${email}>`,
-      subject,
-      text,
-      html,
-    });
+    if (!r.ok) {
+      console.error('contact: Resend rejected the email', r.status, await r.text());
+      return res.status(502).json({ ok: false });
+    }
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('contact: send failed', err);
