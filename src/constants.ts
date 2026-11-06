@@ -12,7 +12,7 @@ export const STEPS: Step[] = [
     summary:
       "We look at how your business runs day to day and find the work an agent could take on. You get the options ranked by what they'd save, a check that your systems and data can support them, and a fixed quote for the one worth doing first.",
     includes: [
-      'Agent opportunities ranked by £ saving',
+      'Agent opportunities ranked by value to you',
       'A feasibility check on your systems and data',
       'Quick wins you can act on straight away',
       'The fee comes off your build if you go ahead',
@@ -101,8 +101,8 @@ export const STANDARD: StandardPoint[] = [
     text: 'We track volume, success rate and cost per run, and get an alert when something drifts.',
   },
   {
-    title: 'UK GDPR by design',
-    text: 'Data mapped and kept to a minimum, hosted in the UK or EU where possible, with a signed data processing agreement.',
+    title: 'Data protection by design',
+    text: 'Built to GDPR and your local data laws, with data kept to a minimum and a signed data processing agreement.',
   },
   {
     title: 'Predictable running costs',

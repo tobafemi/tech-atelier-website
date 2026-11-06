@@ -7,6 +7,7 @@ const explore = [
   { name: 'Agents', href: '#agents' },
   { name: 'Free check', href: '#check' },
   { name: 'Our standard', href: '#standard' },
+  { name: 'Security', href: '#security' },
 ];
 
 const Footer: React.FC = () => (
@@ -18,7 +19,7 @@ const Footer: React.FC = () => (
             <img src={asset('tech-atelier-logo.svg')} alt="Tech Atelier" className="h-8 w-auto" />
           </a>
           <p className="text-slate-500 font-light leading-relaxed">
-            AI agents for small and medium-sized UK businesses. Based in Kent, working across the UK.
+            Tailor-made, production-grade AI agents for growing businesses. Based in the UK, working with clients worldwide.
           </p>
         </div>
 

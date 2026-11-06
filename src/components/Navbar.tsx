@@ -9,6 +9,7 @@ const navLinks = [
   { name: 'Agents', href: '#agents' },
   { name: 'Free check', href: '#check' },
   { name: 'Our standard', href: '#standard' },
+  { name: 'Security', href: '#security' },
 ];
 
 const Navbar: React.FC = () => {
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
-          <div className="flex items-center gap-7 px-6 py-2 rounded-full border border-slate-100 bg-white/60">
+          <div className="flex items-center gap-6 px-6 py-2 rounded-full border border-slate-100 bg-white/60">
             {navLinks.map((link) => (
               <a
                 key={link.name}

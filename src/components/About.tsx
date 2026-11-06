@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 const background = [
-  'Years building and running clinical software used in cancer treatment',
-  'MSc in Clinical and Radiation Oncology',
-  'Certified Scrum Product Owner, PRINCE2 certified',
+  'Engineering: agents, integrations, cloud infrastructure and security',
+  'Product: scoping, testing and adoption, with roots in regulated clinical software',
+  'Business: process mapping, return on investment and change management',
 ];
 
 const promises = [
@@ -25,15 +25,15 @@ const About: React.FC = () => (
         transition={{ duration: 0.7 }}
       >
         <span className="text-[11px] font-bold tracking-[0.4em] text-emerald-600 uppercase mb-6 block">
-          Who's behind it
+          Who we are
         </span>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-950 mb-8 leading-[1.05] text-balance">
-          Built with the habits of medical software.
+          A team of engineers and business specialists.
         </h2>
         <p className="text-lg text-slate-500 leading-relaxed font-light mb-10">
-          Tech Atelier is run by a product owner from clinical software, where every release is tested,
-          documented and traceable because patients depend on it. We bring the same habits to the agents we build
-          for you: a clear scope, proper testing and nothing shipped on hope.
+          Tech Atelier brings together people from software engineering, clinical product and business strategy.
+          Some of us have built software where patients depend on every release being tested and traceable. We
+          apply that discipline to every agent we build: a clear scope, proper testing and nothing shipped on hope.
         </p>
         <ul className="space-y-4">
           {background.map((line) => (

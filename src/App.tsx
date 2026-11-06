@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Agents from './components/Agents';
 import AgentCheck from './components/AgentCheck';
 import Standard from './components/Standard';
+import Security from './components/Security';
 import About from './components/About';
 import FeaturedWork from './components/FeaturedWork';
 import CTA from './components/CTA';
@@ -45,6 +46,7 @@ const App: React.FC = () => {
           <Agents />
           <AgentCheck />
           <Standard />
+          <Security />
           <About />
           <FeaturedWork />
           <CTA />

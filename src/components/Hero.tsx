@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import { useContact } from '../lib/contact';
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+const PROOF = ['Tailor-made', 'Production-grade', 'Secure by design', 'Measured in profit'];
 
 const LOG = [
   { time: '09:02', task: 'Website enquiry', result: 'Qualified and booked in for a call at 2pm', status: 'done' },
@@ -39,22 +41,22 @@ const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            AI AGENTS FOR UK BUSINESSES
+            PRODUCTION-GRADE AI AGENTS
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-bold tracking-tighter text-slate-950 leading-[0.95] text-balance mb-8"
+            className="text-[2.75rem] sm:text-6xl xl:text-7xl font-bold tracking-tighter text-slate-950 leading-[0.95] text-balance mb-8"
           >
-            AI agents that take the admin <span className="text-emerald-500">off your team.</span>
+            AI agents that grow your revenue <span className="text-emerald-500">and cut your costs.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="text-lg md:text-2xl text-slate-500 leading-relaxed mb-12 max-w-xl font-light"
+            className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-xl font-light text-pretty"
           >
-            We find the work that's quietly costing you money, put an agent on it and prove the saving in pounds.
-            Tested before launch and looked after once it's live.
+            Tailor-made for your business, built to production standard and secure by design. Delivered by a team
+            of engineers and business specialists who measure success by your bottom line.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4">
@@ -76,6 +78,15 @@ const Hero: React.FC = () => {
               Try the free check
             </motion.a>
           </motion.div>
+
+          <motion.ul variants={item} className="mt-10 flex flex-wrap gap-x-6 gap-y-3" aria-label="Why Tech Atelier">
+            {PROOF.map((point) => (
+              <li key={point} className="flex items-center gap-2 text-sm font-semibold text-slate-600">
+                <Check className="w-4 h-4 text-emerald-500" />
+                {point}
+              </li>
+            ))}
+          </motion.ul>
         </motion.div>
 
         <motion.div
