@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MessageSquareText, FileCheck2, Inbox } from 'lucide-react';
 import { AGENTS } from '../constants';
 import SectionHeading from './SectionHeading';
+import AgentDemo from './AgentDemo';
 
 const icons: Record<string, React.ReactNode> = {
   enquiry: <MessageSquareText className="w-6 h-6" />,
@@ -15,9 +16,11 @@ const Agents: React.FC = () => (
     <div className="max-w-7xl mx-auto px-6">
       <SectionHeading
         eyebrow="Agents we build"
-        title="Three agents most businesses can put to work straight away."
+        title="Agents most businesses can put to work straight away."
         intro="Each one starts from a proven base and is set up around your systems, your rules and the way you talk to customers. Anything else worth automating comes out of the audit."
       />
+
+      <AgentDemo />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {AGENTS.map((agent, index) => (
