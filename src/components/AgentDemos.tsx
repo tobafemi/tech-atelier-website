@@ -36,7 +36,9 @@ const AgentDemos: React.FC = () => {
             <span className="text-[11px] font-bold tracking-[0.4em] text-emerald-400 uppercase mb-6 block">
               Agents in action
             </span>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter text-balance text-white" style={{ color: '#fff' }}>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter text-balance text-white"
+              style={{ color: '#fff', fontSize: 'clamp(2.75rem, 5vw, 3.75rem)', lineHeight: 1.05 }}
+            >
               See an agent at work
             </h2>
             <p className="text-slate-400 text-lg font-light leading-relaxed mt-6">
@@ -70,7 +72,7 @@ const AgentDemos: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start"
         >
           <div className="lg:col-span-8">
             <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-emerald-500/10 bg-black aspect-video">
