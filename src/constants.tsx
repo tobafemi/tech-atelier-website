@@ -1,5 +1,5 @@
 import { Globe, Sparkles, ClipboardList } from 'lucide-react';
-import type { Service, Project, Testimonial } from './types';
+import type { Service, Project, Testimonial, Agent } from './types';
 
 export const SERVICES: Service[] = [
   {
@@ -68,5 +68,25 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Founder',
     company: 'NextGen AI',
     content: "Building an MVP is usually stressful, but the Atelier team made it feel like a craft. Every detail was intentional and polished.",
+  },
+];
+
+export const AGENTS: Agent[] = [
+  {
+    id: 'referral-outreach',
+    name: 'Referral Outreach Agent',
+    category: 'Lead generation',
+    description:
+      'Finds the businesses most likely to send you clients, writes to each one personally, and turns their replies into warm leads. Shown here working for a private client law firm.',
+    points: [
+      'Finds new referral partners every week and scores each one for fit',
+      'Writes a personal email to each, checked against UK email law first',
+      'You approve every email before anything is sent',
+      'Reads replies, flags warm leads straight away and handles opt-outs',
+      'Sends one polite follow-up, then a summary every Monday',
+    ],
+    goodFor: 'solicitors, care providers, mortgage brokers, clinics, accountants and recruiters.',
+    video: '/videos/referral-outreach-agent.mp4',
+    poster: '/videos/referral-outreach-agent-poster.jpg',
   },
 ];

@@ -26,3 +26,14 @@ export interface Testimonial {
   content: string;
   company: string;
 }
+
+export interface Agent {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  points: string[];
+  goodFor: string;
+  video: string;
+  poster: string;
+}
